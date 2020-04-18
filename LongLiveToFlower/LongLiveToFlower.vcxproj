@@ -19,7 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Music\music.h" />
+    <ClInclude Include="..\src\Objects\common_things.h" />
+    <ClInclude Include="..\src\Objects\flower.h" />
+    <ClInclude Include="..\src\Scenes\end.h" />
+    <ClInclude Include="..\src\Scenes\game.h" />
+    <ClInclude Include="..\src\Scenes\menu.h" />
+    <ClInclude Include="..\src\Sprites\sprites.h" />
+    <ClInclude Include="..\src\System\game_loop.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Music\music.cpp" />
+    <ClCompile Include="..\src\Objects\common_things.cpp" />
+    <ClCompile Include="..\src\Objects\flower.cpp" />
+    <ClCompile Include="..\src\Scenes\end.cpp" />
+    <ClCompile Include="..\src\Scenes\game.cpp" />
+    <ClCompile Include="..\src\Scenes\menu.cpp" />
+    <ClCompile Include="..\src\Sprites\sprites.cpp" />
+    <ClCompile Include="..\src\System\game_loop.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -95,7 +113,8 @@
       <PreprocessorDefinitions>GRAPHICS_API_OPENGL_33;
 PLATFORM_DESKTOP</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.6.0-Win32-msvc15-actualizado\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.6.0-Win32-msvc15-actualizado\include;C:\Users\Fer\source\repos\LongLiveToFlower\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>C:\Users\Fer\source\repos\LongLiveToFlower\src;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -125,7 +144,8 @@ PLATFORM_DESKTOP</PreprocessorDefinitions>
       <PreprocessorDefinitions>GRAPHICS_API_OPENGL_33;
 PLATFORM_DESKTOP</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.6.0-Win32-msvc15-actualizado\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.6.0-Win32-msvc15-actualizado\include;C:\Users\Fer\source\repos\LongLiveToFlower\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>C:\Users\Fer\source\repos\LongLiveToFlower\src;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,14 +1,7 @@
-#include "raylib.h"
+#include "System/game_loop.h"
 
 void main(){
 
-	InitWindow(512,512,"asd");
-
-	while(!WindowShouldClose()){
-		BeginDrawing();
-		ClearBackground(BLACK);
-		DrawRectangle(15,15,100,100,RED);
-		EndDrawing();
-	}
+	
 
 }

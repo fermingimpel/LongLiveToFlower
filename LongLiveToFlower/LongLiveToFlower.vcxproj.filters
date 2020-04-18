@@ -1,6 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{3c4ac368-a44a-43d9-9c18-2462c22f4f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{7c186b6d-6338-403a-969d-19ab9e63ddd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{982c6be4-2fdd-4a1e-83fe-b97e19a87ff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprites">
+      <UniqueIdentifier>{9cfe0093-687d-4da9-8352-3828edb23af6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Music">
+      <UniqueIdentifier>{dff1dff7-c4d0-42a6-a9f2-544283e33113}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Objects\common_things.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Objects\flower.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Music\music.h">
+      <Filter>Music</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\end.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\game.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\menu.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Sprites\sprites.h">
+      <Filter>Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\System\game_loop.h">
+      <Filter>System</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Objects\flower.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Objects\common_things.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Music\music.cpp">
+      <Filter>Music</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\end.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\game.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\menu.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Sprites\sprites.cpp">
+      <Filter>Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\System\game_loop.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
 </Project>
