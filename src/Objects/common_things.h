@@ -7,12 +7,19 @@ namespace LudumDare{
 		onMenu,
 		onGameplay,
 		onEnd,
+		onCredits,
 		closeGame
 	};
 
+	enum Final{
+		win,
+		lose
+	};
+
 	extern GameStates gameState;
-	extern int screenWidth;
-	extern int screenHeight;
+	extern Final final;
+	extern const int screenWidth;
+	extern const int screenHeight;
 
 }
 

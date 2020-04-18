@@ -22,6 +22,8 @@
     <ClInclude Include="..\src\Music\music.h" />
     <ClInclude Include="..\src\Objects\common_things.h" />
     <ClInclude Include="..\src\Objects\flower.h" />
+    <ClInclude Include="..\src\Objects\sun.h" />
+    <ClInclude Include="..\src\Objects\water_can.h" />
     <ClInclude Include="..\src\Scenes\end.h" />
     <ClInclude Include="..\src\Scenes\game.h" />
     <ClInclude Include="..\src\Scenes\menu.h" />
@@ -33,6 +35,8 @@
     <ClCompile Include="..\src\Music\music.cpp" />
     <ClCompile Include="..\src\Objects\common_things.cpp" />
     <ClCompile Include="..\src\Objects\flower.cpp" />
+    <ClCompile Include="..\src\Objects\sun.cpp" />
+    <ClCompile Include="..\src\Objects\water_can.cpp" />
     <ClCompile Include="..\src\Scenes\end.cpp" />
     <ClCompile Include="..\src\Scenes\game.cpp" />
     <ClCompile Include="..\src\Scenes\menu.cpp" />

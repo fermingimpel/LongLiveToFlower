@@ -42,6 +42,12 @@
     <ClInclude Include="..\src\System\game_loop.h">
       <Filter>System</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Objects\water_can.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Objects\sun.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Objects\flower.cpp">
@@ -69,5 +75,11 @@
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Objects\sun.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Objects\water_can.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
