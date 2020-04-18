@@ -7,7 +7,7 @@ namespace LudumDare{
 		onMenu,
 		onGameplay,
 		onEnd,
-		onCredits,
+		onTutorial,
 		closeGame
 	};
 
@@ -16,8 +16,15 @@ namespace LudumDare{
 		lose
 	};
 
+	enum FlowerStates{
+		alive,
+		dead,
+		growing
+	};
+
 	extern GameStates gameState;
 	extern Final final;
+	extern FlowerStates flowerState;
 	extern const int screenWidth;
 	extern const int screenHeight;
 

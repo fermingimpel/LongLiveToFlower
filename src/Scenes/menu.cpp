@@ -2,11 +2,12 @@
 
 #include "Objects/common_things.h"
 #include "Sprites/sprites.h"
+
 namespace LudumDare{
 
 	enum Buttons{
 		play,
-		credits,
+		tutorial,
 		exit,
 		noButton
 	};
@@ -17,14 +18,14 @@ namespace LudumDare{
 	static const float buttonsHeight=53;
 	static const float buttonsX=134;
 	static const float playButtonY=173;
-	static const float creditsButtonY=238;
+	static const float tutorialButtonY=238;
 	static const float exitButtonY=304;
 
 	Menu::Menu(){
 		mouseInButton=noButton;
 		_menuSprite=menuSprite;
 		_playButtonSelected=playButtonSprite;
-		_creditsButtonSelected=creditsButtonSprite;
+		_tutorialButtonSelected=tutorialButtonSprite;
 		_exitButtonSelected=exitButtonSprite;
 
 		_playRec.x=buttonsX;
@@ -32,10 +33,10 @@ namespace LudumDare{
 		_playRec.width=buttonsWidth;
 		_playRec.height=buttonsHeight;
 
-		_creditsRec.x=buttonsX;
-		_creditsRec.y=creditsButtonY;
-		_creditsRec.width=buttonsWidth;
-		_creditsRec.height=buttonsHeight;
+		_tutorialRec.x=buttonsX;
+		_tutorialRec.y=tutorialButtonY;
+		_tutorialRec.width=buttonsWidth;
+		_tutorialRec.height=buttonsHeight;
 
 		_exitRec.x=buttonsX;
 		_exitRec.y=exitButtonY;
@@ -60,10 +61,10 @@ namespace LudumDare{
 				gameState=onGameplay;
 			}
 		}
-		else if(CheckCollisionPointRec(mousePos,_creditsRec)){
-			mouseInButton=credits;
+		else if(CheckCollisionPointRec(mousePos,_tutorialRec)){
+			mouseInButton=tutorial;
 			if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON)){
-				gameState=onCredits;
+				gameState=onTutorial;
 			}
 		}
 		else if(CheckCollisionPointRec(mousePos,_exitRec)){
@@ -86,8 +87,8 @@ namespace LudumDare{
 		case play:
 			DrawTexture(_playButtonSelected,0,0,WHITE);
 			break;
-		case credits:
-			DrawTexture(_creditsButtonSelected,0,0,WHITE);
+		case tutorial:
+			DrawTexture(_tutorialButtonSelected,0,0,WHITE);
 			break;
 		case exit:
 			DrawTexture(_exitButtonSelected,0,0,WHITE);

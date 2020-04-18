@@ -7,11 +7,11 @@ namespace LudumDare{
 
 	class Menu{
 		Rectangle _playRec;
-		Rectangle _creditsRec;
+		Rectangle _tutorialRec;
 		Rectangle _exitRec;
 		Texture2D _menuSprite;
 		Texture2D _playButtonSelected;
-		Texture2D _creditsButtonSelected;
+		Texture2D _tutorialButtonSelected;
 		Texture2D _exitButtonSelected;
 	public:
 		Menu();

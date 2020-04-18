@@ -43,7 +43,6 @@ namespace LudumDare{
 			BeginDrawing();
 			ClearBackground(BLACK);
 
-
 			switch(gameState){
 			case onMenu:
 				if(_game!=NULL){
@@ -64,8 +63,7 @@ namespace LudumDare{
 				if(_game==NULL)
 					_game=new Game();
 				else if(_game!=NULL)
-					;
-
+					_game->run();
 				break;
 
 			case onEnd:
