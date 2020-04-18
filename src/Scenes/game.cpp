@@ -4,6 +4,9 @@
 
 namespace LudumDare{
 
+	static float timer=0;
+	static const float maxGrowTimer=1.5f;
+
 	Game::Game(){
 		_windowSprite=windowSprite;
 		_skySprite=skySprite;
@@ -34,6 +37,22 @@ namespace LudumDare{
 			_flower->update();
 		if(_flowerNeeds!=NULL)
 			_flowerNeeds->update();
+
+		if(_flowerNeeds!=NULL && _flower!=NULL){
+
+			if(_flowerNeeds->getSunCharge()>=_flower->getChargeToGrow()&&_flowerNeeds->getWaterCharge()>=_flower->getChargeToGrow()){
+				timer+=GetFrameTime();
+				if(timer>=maxGrowTimer){
+					timer=0;
+					_flower->grow();
+					_flowerNeeds->grow();
+				}
+			}
+
+			if(_flowerNeeds->getSunCharge()<=_flower->getChargeToDie()||_flowerNeeds->getWaterCharge()<=_flower->getChargeToDie()){
+				_flower->dead();
+			}
+		}
 	}
 	void Game::draw(){
 		DrawTexture(_skySprite,0,0,WHITE);

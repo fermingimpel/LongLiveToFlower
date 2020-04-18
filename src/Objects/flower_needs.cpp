@@ -6,10 +6,12 @@
 namespace LudumDare{
 
 	static const int chargerSpeed=20;
-	static const int degreeSpeed=10;
+	static const int degreeSpeed=15;
 	static const int maxCharge=100;
 	static float needsTimer=0;
-	static const float maxNeedsTimer=1.5f;
+	static const float maxNeedsTimer=2;
+	static int minRandom=1;
+	static int maxRandom=4;
 
 	static const int recsWidth=83;
 	static const int recsHeight=12;
@@ -17,10 +19,12 @@ namespace LudumDare{
 	static const int sunRecX=404;
 	static const int waterRecX=46;
 
+	static const int initialCharge=33;
+
 	enum FlowerNeed{
-		sun,
-		water,
-		nothing
+		sun=1,
+		water=2,
+		nothing=4
 	};
 
 	FlowerNeed needs;
@@ -32,8 +36,8 @@ namespace LudumDare{
 		_needWaterSprite=needWaterSprite;
 		needs=nothing;
 		_charging=false;
-		_sunCharge=33;
-		_waterCharge=33;
+		_sunCharge=initialCharge;
+		_waterCharge=initialCharge;
 
 		_sunChargeRec.x=sunRecX;
 		_sunChargeRec.y=recsY;
@@ -56,12 +60,14 @@ namespace LudumDare{
 				if(_waterCharge>=maxCharge)
 					_waterCharge=maxCharge;
 
-				_sunCharge-=degreeSpeed*GetFrameTime();
+				_sunCharge-=degreeSpeed*1.33f*GetFrameTime();
 			}
 			else if(needs==water){
 				_waterCharge+=chargerSpeed*2*GetFrameTime();
 				if(_waterCharge>=maxCharge)
 					_waterCharge=maxCharge;
+
+				_sunCharge-=degreeSpeed*GetFrameTime();
 			}
 		}
 		else if(IsKeyDown(KEY_RIGHT)){
@@ -71,12 +77,14 @@ namespace LudumDare{
 				if(_sunCharge>=maxCharge)
 					_sunCharge=maxCharge;
 
-				_waterCharge-=degreeSpeed*GetFrameTime();
+				_waterCharge-=degreeSpeed*1.33f*GetFrameTime();
 			}
 			else if(needs==sun){
 				_sunCharge+=chargerSpeed*2*GetFrameTime();
 				if(_sunCharge>=maxCharge)
 					_sunCharge=maxCharge;
+
+				_waterCharge-=degreeSpeed*GetFrameTime();
 			}
 		}
 		else
@@ -84,29 +92,18 @@ namespace LudumDare{
 	}
 	void Flower_Needs::update(){
 		if(_charging==false){
-			_sunCharge-=chargerSpeed*GetFrameTime();
-			_waterCharge-=chargerSpeed*GetFrameTime();
+			_sunCharge-=degreeSpeed*1.33f*GetFrameTime();
+			_waterCharge-=degreeSpeed*1.33f*GetFrameTime();
 
-		}
-
-		if(_sunCharge<=0){
-			_sunCharge=0;
-			final=lose;
-			flowerState=dead;
-		}
-		if(_waterCharge<=0){
-			_waterCharge=0;
-			final=lose;
-			flowerState=dead;
 		}
 
 		needsTimer+=GetFrameTime();
 		if(needsTimer>=maxNeedsTimer){
 			needsTimer=0;
-			int need=GetRandomValue(1,4);
-			if(need==1)
+			int need=GetRandomValue(minRandom,maxRandom);
+			if(need==sun)
 				needs=sun;
-			else if(need==2)
+			else if(need==water)
 				needs=water;
 			else
 				needs=nothing;
@@ -125,6 +122,12 @@ namespace LudumDare{
 			DrawTexture(_needSunSprite,0,0,WHITE);
 		else if(needs==water)
 			DrawTexture(_needWaterSprite,0,0,WHITE);
+	}
+	void Flower_Needs::grow(){
+		_sunCharge=initialCharge;
+		_waterCharge=initialCharge;
+		needs=nothing;
+		maxRandom++;
 	}
 	bool Flower_Needs::getNeedSun(){
 		if(needs==sun)

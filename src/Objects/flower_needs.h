@@ -21,6 +21,7 @@ namespace LudumDare{
 		void input();
 		void update();
 		void draw();
+		void grow();
 		bool getNeedSun();
 		bool getNeedWater();
 		float getSunCharge();
