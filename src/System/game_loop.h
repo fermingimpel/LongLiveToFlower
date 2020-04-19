@@ -16,7 +16,7 @@ namespace LudumDare{
 		Tutorial* _tutorial;
 		Lose* _lose;
 		Win* _win;
-		Music* _music;
+		GameMusic* _music;
 	public:
 		Game_Loop();
 		~Game_Loop();

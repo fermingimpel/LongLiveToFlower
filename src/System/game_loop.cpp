@@ -8,7 +8,7 @@
 namespace LudumDare{
 
 	Game_Loop::Game_Loop(){
-		InitWindow(screenWidth,screenHeight,"Long Live To Flower");
+		InitWindow(screenWidth,screenHeight,"Long Live To Flower LD46");
 		SetExitKey(KEY_VOLUME_DOWN);
 		InitAudioDevice();
 		loadSprites();
@@ -22,7 +22,7 @@ namespace LudumDare{
 		_music=NULL;
 
 		_menu=new Menu();
-		_music=new Music();
+		_music=new GameMusic();
 
 	}
 	Game_Loop::~Game_Loop(){
@@ -45,6 +45,7 @@ namespace LudumDare{
 	}
 	void Game_Loop::play(){
 		while(gameState!=closeGame&&!WindowShouldClose()){
+			_music->play();
 			BeginDrawing();
 			ClearBackground(BLACK);
 			switch(gameState){
