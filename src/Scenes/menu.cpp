@@ -5,13 +5,13 @@
 
 namespace LudumDare{
 
-	enum Buttons{
+	static enum ButtonsMenu{
 		play,
 		tutorial,
 		exit,
 		noButton
 	};
-	Buttons mouseInButton;
+	static ButtonsMenu mouseInButton;
 	static Vector2 mousePos;
 
 	static const float buttonsWidth=246;
@@ -49,7 +49,6 @@ namespace LudumDare{
 	}
 	void Menu::run(){
 		input();
-		update();
 		draw();
 	}
 	void Menu::input(){
@@ -76,9 +75,6 @@ namespace LudumDare{
 		else{
 			mouseInButton=noButton;
 		}
-
-	}
-	void Menu::update(){
 
 	}
 	void Menu::draw(){

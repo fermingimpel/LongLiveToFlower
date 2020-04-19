@@ -18,7 +18,6 @@ namespace LudumDare{
 		~Menu();
 		void run();
 		void input();
-		void update();
 		void draw();
 	};
 

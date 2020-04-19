@@ -48,6 +48,9 @@ namespace LudumDare{
 		_waterChargeRec.y=recsY;
 		_waterChargeRec.width=recsWidth;
 		_waterChargeRec.height=recsHeight;
+
+		minRandom=1;
+		maxRandom=4;
 	}
 	Flower_Needs::~Flower_Needs(){
 

@@ -6,6 +6,7 @@ namespace LudumDare{
 	Texture2D windowSprite;
 	Texture2D skySprite;
 	Texture2D plantsSprites[7];
+	Texture2D plantDead;
 	Texture2D sunSprite;
 	Texture2D waterSprite;
 	Texture2D needWaterSprite;
@@ -15,6 +16,9 @@ namespace LudumDare{
 	Texture2D playButtonSprite;
 	Texture2D tutorialButtonSprite;
 	Texture2D exitButtonSprite;
+	Texture2D menuButtonSprite;
+	Texture2D endButtonSprite;
+	Texture2D loseTextSprite;
 
 	void loadSprites(){
 		//Gameplay
@@ -27,6 +31,7 @@ namespace LudumDare{
 		plantsSprites[4]=LoadTexture("res/Assets/Sprites/Plant5.png");
 		plantsSprites[5]=LoadTexture("res/Assets/Sprites/Plant6.png");
 		plantsSprites[6]=LoadTexture("res/Assets/Sprites/Plant7.png");
+		plantDead=LoadTexture("res/Assets/Sprites/PlantDead.png");
 		sunSprite=LoadTexture("res/Assets/Sprites/Sun.png");
 		waterSprite=LoadTexture("res/assets/Sprites/WaterCan.png");;
 		needWaterSprite=LoadTexture("res/Assets/Sprites/NedWater.png");
@@ -37,6 +42,9 @@ namespace LudumDare{
 		playButtonSprite=LoadTexture("res/Assets/Sprites/PlayButton.png");
 		tutorialButtonSprite=LoadTexture("res/Assets/Sprites/CreditsButton.png");
 		exitButtonSprite=LoadTexture("res/Assets/Sprites/ExitButton.png");
+		menuButtonSprite=LoadTexture("res/Assets/Sprites/MenuButton.png");
+		endButtonSprite=LoadTexture("res/Assets/Sprites/EndButtons.png");
+		loseTextSprite=LoadTexture("res/Assets/Sprites/YouLoseText.png");
 	}
 	void unloadSprites(){
 		//Unload Gameplay sprites
@@ -44,6 +52,8 @@ namespace LudumDare{
 			UnloadTexture(plantsSprites[i]);
 		UnloadTexture(windowSprite);
 		UnloadTexture(skySprite);
+		UnloadTexture(sunSprite);
+		UnloadTexture(waterSprite);
 		UnloadTexture(needWaterSprite);
 		UnloadTexture(needSunSprite);
 
@@ -52,6 +62,9 @@ namespace LudumDare{
 		UnloadTexture(playButtonSprite);
 		UnloadTexture(tutorialButtonSprite);
 		UnloadTexture(exitButtonSprite);
+		UnloadTexture(menuButtonSprite);
+		UnloadTexture(endButtonSprite);
+		UnloadTexture(loseTextSprite);
 	}
 
 }

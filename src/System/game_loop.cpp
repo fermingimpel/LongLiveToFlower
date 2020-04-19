@@ -42,7 +42,6 @@ namespace LudumDare{
 		while(gameState!=closeGame&&!WindowShouldClose()){
 			BeginDrawing();
 			ClearBackground(BLACK);
-
 			switch(gameState){
 			case onMenu:
 				if(_game!=NULL){
@@ -62,6 +61,10 @@ namespace LudumDare{
 			case onGameplay:
 				if(_game==NULL)
 					_game=new Game();
+				if(_end!=NULL){
+					delete _end;
+					_end=NULL;
+				}
 				else if(_game!=NULL)
 					_game->run();
 				break;
@@ -69,12 +72,14 @@ namespace LudumDare{
 			case onEnd:
 				if(_end==NULL)
 					_end=new End();
+				if(_game!=NULL){
+					delete _game;
+					_game=NULL;
+				}
 				else if(_end!=NULL)
-					;
+					_end->run();
 				break;
-
 			}
-
 			EndDrawing();
 		}
 	}

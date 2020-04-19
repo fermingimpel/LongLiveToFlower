@@ -3,14 +3,14 @@
 
 #include "raylib.h"
 
-#include "Objects/flower_needs.h"
-
 namespace LudumDare{
 
 	class Flower{
 		Texture2D _plantSprites[7];
+		Texture2D _plantDead;
 		float _chargeToGrow;
 		float _chargeToDie;
+		bool _death;
 	public:
 		Flower();
 		~Flower();
@@ -20,6 +20,9 @@ namespace LudumDare{
 		float getChargeToDie();
 		void grow();
 		void dead();
+		void setDeatFlower();
+		void deadAnim();
+		bool getDeath();
 	};
 
 }
