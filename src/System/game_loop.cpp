@@ -14,10 +14,11 @@ namespace LudumDare{
 		loadSprites();
 
 		gameState=onMenu;
-		_menu = NULL;
-		_game = NULL;
-		_end = NULL;
-		_music = NULL;
+		_menu=NULL;
+		_game=NULL;
+		_lose=NULL;
+		_win=NULL;
+		_music=NULL;
 
 		_menu=new Menu();
 		_music=new Music();
@@ -28,15 +29,17 @@ namespace LudumDare{
 			delete _menu;
 		if(_game!=NULL)
 			delete _game;
-		if(_end!=NULL)
-			delete _end;
+		if(_lose!=NULL)
+			delete _lose;
+		if(_win!=NULL)
+			delete _win;
 		if(_music!=NULL)
 			delete _music;
 
 		unloadSprites();
 		CloseAudioDevice();
 		CloseWindow();
-		
+
 	}
 	void Game_Loop::play(){
 		while(gameState!=closeGame&&!WindowShouldClose()){
@@ -48,36 +51,57 @@ namespace LudumDare{
 					delete _game;
 					_game=NULL;
 				}
-				if(_end!=NULL){
-					delete _end;
-					_end=NULL;
+				if(_lose!=NULL){
+					delete _lose;
+					_lose=NULL;
+				}
+				if(_win!=NULL){
+					delete _win;
+					_win=NULL;
 				}
 
 				if(_menu!=NULL){
 					_menu->run();
 				}
 				break;
-			
+
 			case onGameplay:
+				if(_lose!=NULL){
+					delete _lose;
+					_lose=NULL;
+				}
+				if(_win!=NULL){
+					delete _win;
+					_win=NULL;
+				}
+
 				if(_game==NULL)
 					_game=new Game();
-				if(_end!=NULL){
-					delete _end;
-					_end=NULL;
-				}
 				else if(_game!=NULL)
 					_game->run();
 				break;
 
 			case onEnd:
-				if(_end==NULL)
-					_end=new End();
-				if(_game!=NULL){
-					delete _game;
-					_game=NULL;
+				if(final==lose){
+					if(_game!=NULL){
+						delete _game;
+						_game=NULL;
+					}
+					if(_lose==NULL)
+						_lose=new Lose();
+					else if(_lose!=NULL)
+						_lose->run();
 				}
-				else if(_end!=NULL)
-					_end->run();
+				else if(final==win){
+					if(_game!=NULL){
+						delete _game;
+						_game=NULL;
+					}
+					if(_win==NULL)
+						_win=new Win();
+					else if(_win!=NULL)
+						_win->run();
+				}
 				break;
 			}
 			EndDrawing();

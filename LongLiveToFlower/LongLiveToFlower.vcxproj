@@ -23,9 +23,10 @@
     <ClInclude Include="..\src\Objects\common_things.h" />
     <ClInclude Include="..\src\Objects\flower.h" />
     <ClInclude Include="..\src\Objects\flower_needs.h" />
-    <ClInclude Include="..\src\Scenes\end.h" />
+    <ClInclude Include="..\src\Scenes\lose.h" />
     <ClInclude Include="..\src\Scenes\game.h" />
     <ClInclude Include="..\src\Scenes\menu.h" />
+    <ClInclude Include="..\src\Scenes\win.h" />
     <ClInclude Include="..\src\Sprites\sprites.h" />
     <ClInclude Include="..\src\System\game_loop.h" />
   </ItemGroup>
@@ -35,9 +36,10 @@
     <ClCompile Include="..\src\Objects\common_things.cpp" />
     <ClCompile Include="..\src\Objects\flower.cpp" />
     <ClCompile Include="..\src\Objects\flower_needs.cpp" />
-    <ClCompile Include="..\src\Scenes\end.cpp" />
+    <ClCompile Include="..\src\Scenes\lose.cpp" />
     <ClCompile Include="..\src\Scenes\game.cpp" />
     <ClCompile Include="..\src\Scenes\menu.cpp" />
+    <ClCompile Include="..\src\Scenes\win.cpp" />
     <ClCompile Include="..\src\Sprites\sprites.cpp" />
     <ClCompile Include="..\src\System\game_loop.cpp" />
   </ItemGroup>

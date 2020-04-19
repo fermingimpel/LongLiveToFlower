@@ -27,9 +27,6 @@
     <ClInclude Include="..\src\Music\music.h">
       <Filter>Music</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Scenes\end.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Scenes\game.h">
       <Filter>Scenes</Filter>
     </ClInclude>
@@ -45,6 +42,12 @@
     <ClInclude Include="..\src\Objects\flower_needs.h">
       <Filter>Objects</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Scenes\lose.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\win.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Objects\flower.cpp">
@@ -55,9 +58,6 @@
     </ClCompile>
     <ClCompile Include="..\src\Music\music.cpp">
       <Filter>Music</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Scenes\end.cpp">
-      <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scenes\game.cpp">
       <Filter>Scenes</Filter>
@@ -74,6 +74,12 @@
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Objects\flower_needs.cpp">
       <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\lose.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\win.cpp">
+      <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

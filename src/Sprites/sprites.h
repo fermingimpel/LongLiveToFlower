@@ -23,6 +23,7 @@ namespace LudumDare{
 	extern Texture2D menuButtonSprite;
 	extern Texture2D endButtonSprite;
 	extern Texture2D loseTextSprite;
+	extern Texture2D winSprites[9];
 
 	//Load & Unload
 	void loadSprites();

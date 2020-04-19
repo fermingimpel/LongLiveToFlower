@@ -1,4 +1,4 @@
-#include "end.h"
+#include "lose.h"
 
 #include "Sprites/sprites.h"
 #include "Objects/common_things.h"
@@ -21,7 +21,7 @@ namespace LudumDare{
 	static ButtonsEnd mouseInButton;
 	static Vector2 mousePos;
 
-	End::End(){
+	Lose::Lose(){
 		_flower=new Flower();
 		_flower->setDeatFlower();
 		_windowSprite=windowSprite;
@@ -50,14 +50,14 @@ namespace LudumDare{
 
 		mouseInButton=nothing;
 	}
-	End::~End(){
+	Lose::~Lose(){
 		delete _flower;
 	}
-	void End::run(){
+	void Lose::run(){
 		input();
 		draw();
 	}
-	void End::input(){
+	void Lose::input(){
 		if(_flower->getDeath()==true){
 			mousePos=GetMousePosition();
 			if(CheckCollisionPointRec(mousePos,_playAgainButtonRec)){
@@ -82,7 +82,7 @@ namespace LudumDare{
 				mouseInButton=nothing;
 		}
 	}
-	void End::draw(){
+	void Lose::draw(){
 		DrawTexture(_skySprite,0,0,WHITE);
 		_flower->deadAnim();
 		DrawTexture(_windowSprite,0,0,WHITE);

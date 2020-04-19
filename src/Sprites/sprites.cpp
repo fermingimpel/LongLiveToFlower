@@ -19,6 +19,7 @@ namespace LudumDare{
 	Texture2D menuButtonSprite;
 	Texture2D endButtonSprite;
 	Texture2D loseTextSprite;
+	Texture2D winSprites[9];
 
 	void loadSprites(){
 		//Gameplay
@@ -45,6 +46,16 @@ namespace LudumDare{
 		menuButtonSprite=LoadTexture("res/Assets/Sprites/MenuButton.png");
 		endButtonSprite=LoadTexture("res/Assets/Sprites/EndButtons.png");
 		loseTextSprite=LoadTexture("res/Assets/Sprites/YouLoseText.png");
+		winSprites[0]=LoadTexture("res/Assets/Sprites/WinP1.png");
+		winSprites[1]=LoadTexture("res/Assets/Sprites/WinP2.png");
+		winSprites[2]=LoadTexture("res/Assets/Sprites/WinP3.png");
+		winSprites[3]=LoadTexture("res/Assets/Sprites/WinP4.png");
+		winSprites[4]=LoadTexture("res/Assets/Sprites/WinP5.png");
+		winSprites[5]=LoadTexture("res/Assets/Sprites/WinP6.png");
+		winSprites[6]=LoadTexture("res/Assets/Sprites/WinP7.png");
+		winSprites[7]=LoadTexture("res/Assets/Sprites/WinP8.png");
+		winSprites[8]=LoadTexture("res/Assets/Sprites/WinP9.png");
+
 	}
 	void unloadSprites(){
 		//Unload Gameplay sprites
@@ -65,6 +76,8 @@ namespace LudumDare{
 		UnloadTexture(menuButtonSprite);
 		UnloadTexture(endButtonSprite);
 		UnloadTexture(loseTextSprite);
+		for(int i=0;i<9;i++)
+			UnloadTexture(winSprites[i]);
 	}
 
 }

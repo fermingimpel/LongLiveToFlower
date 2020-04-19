@@ -1,5 +1,5 @@
-#ifndef END_H
-#define END_H
+#ifndef LOSE_H
+#define LOSE_H
 
 #include "raylib.h"
 
@@ -7,7 +7,7 @@
 
 namespace LudumDare{
 
-	class End{
+	class Lose{
 		Flower* _flower;
 		Texture2D _windowSprite;
 		Texture2D _skySprite;
@@ -20,8 +20,8 @@ namespace LudumDare{
 		Rectangle _menuButtonRec;
 		Rectangle _exitButtonRec;
 	public:
-		End();
-		~End();
+		Lose();
+		~Lose();
 		void run();
 		void input();
 		void draw();

@@ -5,7 +5,7 @@
 
 namespace LudumDare{
 
-	static const int chargerSpeed=20;
+	static const int chargerSpeed=25;
 	static const int degreeSpeed=15;
 	static const int maxCharge=100;
 	static float needsTimer=0;

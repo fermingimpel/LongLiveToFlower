@@ -3,7 +3,8 @@
 
 #include "Scenes/menu.h"
 #include "Scenes/game.h"
-#include "Scenes/end.h"
+#include "Scenes/lose.h"
+#include "Scenes/win.h"
 #include "Music/music.h"
 
 namespace LudumDare{
@@ -11,7 +12,8 @@ namespace LudumDare{
 	class Game_Loop{
 		Menu* _menu;
 		Game* _game;
-		End* _end;
+		Lose* _lose;
+		Win* _win;
 		Music* _music;
 	public:
 		Game_Loop();
