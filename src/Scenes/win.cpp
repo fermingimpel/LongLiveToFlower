@@ -6,7 +6,7 @@
 namespace LudumDare{
 
 	static float timer=0;
-	static const float maxTimer=3.0f;
+	static const float maxTimer=5.0f;
 	static int actualSprite=0;
 	static const int maxSprites=9;
 	static Texture2D asd;
@@ -35,7 +35,6 @@ namespace LudumDare{
 	}
 	void Win::draw(){
 		DrawTexture(_winSprites[actualSprite],0,0,WHITE);
-		DrawTexture(asd,0,0,WHITE);
 	}
 
 
