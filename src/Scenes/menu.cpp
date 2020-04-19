@@ -5,7 +5,7 @@
 
 namespace LudumDare{
 
-	static enum ButtonsMenu{
+	enum ButtonsMenu{
 		play,
 		tutorial,
 		exit,

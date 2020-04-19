@@ -3,7 +3,7 @@
 #include "raylib.h"
 
 #include "Objects/common_things.h"
-#include "Sprites/sprites.h";
+#include "Sprites/sprites.h"
 
 namespace LudumDare{
 
@@ -16,6 +16,7 @@ namespace LudumDare{
 		gameState=onMenu;
 		_menu=NULL;
 		_game=NULL;
+		_tutorial=NULL;
 		_lose=NULL;
 		_win=NULL;
 		_music=NULL;
@@ -29,6 +30,8 @@ namespace LudumDare{
 			delete _menu;
 		if(_game!=NULL)
 			delete _game;
+		if(_tutorial!=NULL)
+			delete _tutorial;
 		if(_lose!=NULL)
 			delete _lose;
 		if(_win!=NULL)
@@ -39,7 +42,6 @@ namespace LudumDare{
 		unloadSprites();
 		CloseAudioDevice();
 		CloseWindow();
-
 	}
 	void Game_Loop::play(){
 		while(gameState!=closeGame&&!WindowShouldClose()){
@@ -50,6 +52,10 @@ namespace LudumDare{
 				if(_game!=NULL){
 					delete _game;
 					_game=NULL;
+				}
+				if(_tutorial!=NULL){
+					delete _tutorial;
+					_tutorial=NULL;
 				}
 				if(_lose!=NULL){
 					delete _lose;
@@ -66,6 +72,10 @@ namespace LudumDare{
 				break;
 
 			case onGameplay:
+				if(_tutorial!=NULL){
+					delete _tutorial;
+					_tutorial=NULL;
+				}
 				if(_lose!=NULL){
 					delete _lose;
 					_lose=NULL;
@@ -80,12 +90,38 @@ namespace LudumDare{
 				else if(_game!=NULL)
 					_game->run();
 				break;
+			case onTutorial:
+				if(_game!=NULL){
+					delete _game;
+					_game=NULL;
+				}
+				if(_lose!=NULL){
+					delete _lose;
+					_lose=NULL;
+				}
+				if(_win!=NULL){
+					delete _win;
+					_win=NULL;
+				}
 
+				if(_tutorial==NULL)
+					_tutorial=new Tutorial();
+				else if(_tutorial!=NULL)
+					_tutorial->run();
+				break;
 			case onEnd:
 				if(final==lose){
 					if(_game!=NULL){
 						delete _game;
 						_game=NULL;
+					}
+					if(_tutorial!=NULL){
+						delete _tutorial;
+						_tutorial=NULL;
+					}
+					if(_win!=NULL){
+						delete _win;
+						_win=NULL;
 					}
 					if(_lose==NULL)
 						_lose=new Lose();
@@ -97,6 +133,15 @@ namespace LudumDare{
 						delete _game;
 						_game=NULL;
 					}
+					if(_tutorial!=NULL){
+						delete _tutorial;
+						_tutorial=NULL;
+					}
+					if(_lose!=NULL){
+						delete _lose;
+						_lose=NULL;
+					}
+
 					if(_win==NULL)
 						_win=new Win();
 					else if(_win!=NULL)

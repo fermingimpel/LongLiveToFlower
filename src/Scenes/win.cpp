@@ -9,22 +9,22 @@ namespace LudumDare{
 	static const float maxTimer=3.0f;
 	static int actualSprite=0;
 	static const int maxSprites=9;
-
+	static Texture2D asd;
 	Win::Win(){
 		for(int i=0;i<maxSprites;i++)
 			_winSprites[i]=winSprites[i];
 		timer=0;
 		actualSprite=0;
+		asd=onTutorialButtonsSprite;
 	}
 	Win::~Win(){
 
 	}
 	void Win::run(){
 		update();
+		draw();
 	}
 	void Win::update(){
-		DrawTexture(_winSprites[actualSprite],0,0,WHITE);
-
 		timer+=GetFrameTime();
 		if(timer>=maxTimer){
 			timer=0;
@@ -32,6 +32,10 @@ namespace LudumDare{
 			if(actualSprite>=maxSprites)
 				gameState=onMenu;
 		}
+	}
+	void Win::draw(){
+		DrawTexture(_winSprites[actualSprite],0,0,WHITE);
+		DrawTexture(asd,0,0,WHITE);
 	}
 
 

@@ -26,6 +26,7 @@
     <ClInclude Include="..\src\Scenes\lose.h" />
     <ClInclude Include="..\src\Scenes\game.h" />
     <ClInclude Include="..\src\Scenes\menu.h" />
+    <ClInclude Include="..\src\Scenes\tutorial.h" />
     <ClInclude Include="..\src\Scenes\win.h" />
     <ClInclude Include="..\src\Sprites\sprites.h" />
     <ClInclude Include="..\src\System\game_loop.h" />
@@ -39,6 +40,7 @@
     <ClCompile Include="..\src\Scenes\lose.cpp" />
     <ClCompile Include="..\src\Scenes\game.cpp" />
     <ClCompile Include="..\src\Scenes\menu.cpp" />
+    <ClCompile Include="..\src\Scenes\tutorial.cpp" />
     <ClCompile Include="..\src\Scenes\win.cpp" />
     <ClCompile Include="..\src\Sprites\sprites.cpp" />
     <ClCompile Include="..\src\System\game_loop.cpp" />

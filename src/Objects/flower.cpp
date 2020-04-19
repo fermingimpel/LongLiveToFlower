@@ -84,7 +84,7 @@ namespace LudumDare{
 				actualPlant--;
 			}
 		}
-		else if(actualPlant<=0){
+		else if(actualPlant<0){
 			DrawTexture(_plantDead,0,0,WHITE);
 			_death=true;
 		}

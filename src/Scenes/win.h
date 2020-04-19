@@ -12,6 +12,7 @@ namespace LudumDare{
 		~Win();
 		void run();
 		void update();
+		void draw();
 	};
 
 }

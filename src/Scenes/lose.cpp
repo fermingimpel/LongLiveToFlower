@@ -12,7 +12,7 @@ namespace LudumDare{
 	static const float menuButtonY=238;
 	static const float exitButtonY=304;
 
-	static enum ButtonsEnd{
+	enum ButtonsEnd{
 		nothing,
 		play,
 		menu,

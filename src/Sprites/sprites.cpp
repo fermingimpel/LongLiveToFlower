@@ -20,6 +20,11 @@ namespace LudumDare{
 	Texture2D endButtonSprite;
 	Texture2D loseTextSprite;
 	Texture2D winSprites[9];
+	Texture2D tutorialSprites[6];
+	Texture2D onTutorialButtonsSprite;
+	Texture2D backButtonSprite;
+	Texture2D nextButtonSprite;
+
 
 	void loadSprites(){
 		//Gameplay
@@ -55,10 +60,17 @@ namespace LudumDare{
 		winSprites[6]=LoadTexture("res/Assets/Sprites/WinP7.png");
 		winSprites[7]=LoadTexture("res/Assets/Sprites/WinP8.png");
 		winSprites[8]=LoadTexture("res/Assets/Sprites/WinP9.png");
-
+		tutorialSprites[0]=LoadTexture("res/Assets/Sprites/Tutorial1.png");
+		tutorialSprites[1]=LoadTexture("res/Assets/Sprites/Tutorial2.png");
+		tutorialSprites[2]=LoadTexture("res/Assets/Sprites/Tutorial3.png");
+		tutorialSprites[3]=LoadTexture("res/Assets/Sprites/Tutorial4.png");
+		tutorialSprites[4]=LoadTexture("res/Assets/Sprites/Tutorial5.png");
+		tutorialSprites[5]=LoadTexture("res/Assets/Sprites/Tutorial6.png");
+		onTutorialButtonsSprite=LoadTexture("res/Assets/Sprites/TutorialButtons.png");;
+		backButtonSprite=LoadTexture("res/Assets/Sprites/BackButton.png");
+		nextButtonSprite=LoadTexture("res/Assets/Sprites/NextButton.png");
 	}
 	void unloadSprites(){
-		//Unload Gameplay sprites
 		for(int i=0;i<7;i++)
 			UnloadTexture(plantsSprites[i]);
 		UnloadTexture(windowSprite);
@@ -68,7 +80,6 @@ namespace LudumDare{
 		UnloadTexture(needWaterSprite);
 		UnloadTexture(needSunSprite);
 
-		//Unload Menu Sprites
 		UnloadTexture(menuSprite);
 		UnloadTexture(playButtonSprite);
 		UnloadTexture(tutorialButtonSprite);
@@ -78,6 +89,11 @@ namespace LudumDare{
 		UnloadTexture(loseTextSprite);
 		for(int i=0;i<9;i++)
 			UnloadTexture(winSprites[i]);
+		for(int i=0;i<6;i++)
+			UnloadTexture(tutorialSprites[i]);
+		UnloadTexture(onTutorialButtonsSprite);
+		UnloadTexture(backButtonSprite);
+		UnloadTexture(nextButtonSprite);
 	}
 
 }
