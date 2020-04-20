@@ -22,6 +22,10 @@ namespace LudumDare{
 		_death=false;
 		action=keepFlower;
 		phase=first;
+		_growSound=growSound;
+		_deadSound=deadSound;
+		SetSoundVolume(_growSound,0.2f);
+		SetSoundVolume(_deadSound,0.2f);
 	}
 	Flower::~Flower(){
 	}
@@ -64,9 +68,11 @@ namespace LudumDare{
 		return _chargeToDie;
 	}
 	void Flower::grow(){
+		PlaySound(_growSound);
 		action=growFlower;
 	}
 	void Flower::dead(){
+		PlaySound(_deadSound);
 		action=deadFlower;
 	}
 	void Flower::setDeatFlower(){

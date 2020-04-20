@@ -15,6 +15,10 @@ namespace LudumDare{
 		float _waterCharge;
 		Rectangle _sunChargeRec;
 		Rectangle _waterChargeRec;
+		Sound _waterSound;
+		Sound _sunSound;
+		Sound _needWaterSound;
+		Sound _needSunSound;
 	public:
 		Flower_Needs();
 		~Flower_Needs();

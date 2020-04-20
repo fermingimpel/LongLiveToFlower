@@ -7,6 +7,7 @@ namespace LudumDare{
 
 	class Win{
 		Texture2D _winSprites[9];
+		Sound _winSound;
 	public:
 		Win();
 		~Win();

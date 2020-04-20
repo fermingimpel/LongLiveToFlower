@@ -19,11 +19,13 @@ namespace LudumDare{
 		Rectangle _playAgainButtonRec;
 		Rectangle _menuButtonRec;
 		Rectangle _exitButtonRec;
+		Sound _loseSound;
 	public:
 		Lose();
 		~Lose();
 		void run();
 		void input();
+		void update();
 		void draw();
 	};
 

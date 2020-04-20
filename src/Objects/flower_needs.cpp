@@ -34,6 +34,15 @@ namespace LudumDare{
 		_waterSprite=waterSprite;
 		_needSunSprite=needSunSprite;
 		_needWaterSprite=needWaterSprite;
+		_waterSound=waterSound;
+		_sunSound=sunSound;
+		_needWaterSound=needWaterSound;
+		_needSunSound=needSunSound;
+		SetSoundVolume(_sunSound,0.1f);
+		SetSoundVolume(_waterSound,0.08f);
+		SetSoundVolume(_needWaterSound,0.2f);
+		SetSoundVolume(_needSunSound,0.2f);
+
 		needs=nothing;
 		_charging=false;
 		_sunCharge=initialCharge;
@@ -58,6 +67,8 @@ namespace LudumDare{
 	void Flower_Needs::input(){
 		if(IsKeyDown(KEY_LEFT)){
 			_charging=true;
+			if(!IsSoundPlaying(_waterSound))
+				PlaySound(_waterSound);
 			if(needs!=water){
 				_waterCharge+=chargerSpeed*GetFrameTime();
 				if(_waterCharge>=maxCharge)
@@ -75,6 +86,8 @@ namespace LudumDare{
 		}
 		else if(IsKeyDown(KEY_RIGHT)){
 			_charging=true;
+			if(!IsSoundPlaying(_sunSound))
+				PlaySound(_sunSound);
 			if(needs!=sun){
 				_sunCharge+=chargerSpeed*GetFrameTime();
 				if(_sunCharge>=maxCharge)
@@ -104,10 +117,14 @@ namespace LudumDare{
 		if(needsTimer>=maxNeedsTimer){
 			needsTimer=0;
 			int need=GetRandomValue(minRandom,maxRandom);
-			if(need==sun)
+			if(need==sun){
 				needs=sun;
-			else if(need==water)
+				PlaySound(_needSunSound);
+			}
+			else if(need==water){
 				needs=water;
+				PlaySound(_needWaterSound);
+			}
 			else
 				needs=nothing;
 		}
@@ -131,6 +148,7 @@ namespace LudumDare{
 		_waterCharge=initialCharge;
 		needs=nothing;
 		maxRandom++;
+		PlaySound(growSound);
 	}
 	bool Flower_Needs::getNeedSun(){
 		if(needs==sun)

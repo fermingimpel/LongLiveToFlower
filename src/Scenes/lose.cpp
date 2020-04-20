@@ -12,6 +12,10 @@ namespace LudumDare{
 	static const float menuButtonY=238;
 	static const float exitButtonY=304;
 
+	static float soundTimer=0;
+	static const float maxSoundTimer=1.5f;
+	static bool soundPlayed;
+
 	enum ButtonsEnd{
 		nothing,
 		play,
@@ -49,12 +53,17 @@ namespace LudumDare{
 		_exitButtonRec.height=buttonsHeight;
 
 		mouseInButton=nothing;
+		_loseSound=loseSound;
+		SetSoundVolume(_loseSound,0.2f);
+		soundPlayed=false;
+		soundTimer=0;
 	}
 	Lose::~Lose(){
 		delete _flower;
 	}
 	void Lose::run(){
 		input();
+		update();
 		draw();
 	}
 	void Lose::input(){
@@ -80,6 +89,16 @@ namespace LudumDare{
 			}
 			else
 				mouseInButton=nothing;
+		}
+	}
+	void Lose::update(){
+		if(soundPlayed==false){
+			soundTimer+=GetFrameTime();
+			if(soundTimer>=maxSoundTimer){
+				soundTimer=0;
+				PlaySound(_loseSound);
+				soundPlayed=true;
+			}
 		}
 	}
 	void Lose::draw(){

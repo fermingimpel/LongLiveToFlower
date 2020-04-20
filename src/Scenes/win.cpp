@@ -9,13 +9,18 @@ namespace LudumDare{
 	static const float maxTimer=5.0f;
 	static int actualSprite=0;
 	static const int maxSprites=9;
-	static Texture2D asd;
+	static float soundTimer=0;
+	static const float maxSoundTimer=1.5f;
+	static bool soundPlayed=false;
 	Win::Win(){
 		for(int i=0;i<maxSprites;i++)
 			_winSprites[i]=winSprites[i];
 		timer=0;
 		actualSprite=0;
-		asd=onTutorialButtonsSprite;
+		soundTimer=0;
+		soundPlayed=false;
+		_winSound=winSound;
+		SetSoundVolume(_winSound,0.2f);
 	}
 	Win::~Win(){
 
@@ -25,6 +30,14 @@ namespace LudumDare{
 		draw();
 	}
 	void Win::update(){
+		if(soundPlayed==false){
+			soundTimer+=GetFrameTime();
+			if(soundTimer>=maxSoundTimer){
+				soundTimer=0;
+				PlaySound(_winSound);
+				soundPlayed=true;
+			}
+		}
 		timer+=GetFrameTime();
 		if(timer>=maxTimer){
 			timer=0;

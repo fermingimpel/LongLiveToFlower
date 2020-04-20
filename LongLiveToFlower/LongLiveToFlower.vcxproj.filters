@@ -13,9 +13,6 @@
     <Filter Include="Sprites">
       <UniqueIdentifier>{9cfe0093-687d-4da9-8352-3828edb23af6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Music">
-      <UniqueIdentifier>{dff1dff7-c4d0-42a6-a9f2-544283e33113}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Objects\common_things.h">
@@ -23,9 +20,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Objects\flower.h">
       <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Music\music.h">
-      <Filter>Music</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Scenes\game.h">
       <Filter>Scenes</Filter>
@@ -58,9 +52,6 @@
     </ClCompile>
     <ClCompile Include="..\src\Objects\common_things.cpp">
       <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Music\music.cpp">
-      <Filter>Music</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scenes\game.cpp">
       <Filter>Scenes</Filter>

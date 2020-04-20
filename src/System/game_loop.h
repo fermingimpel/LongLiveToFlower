@@ -6,8 +6,6 @@
 #include "Scenes/tutorial.h"
 #include "Scenes/lose.h"
 #include "Scenes/win.h"
-#include "Music/music.h"
-
 namespace LudumDare{
 
 	class Game_Loop{
@@ -16,7 +14,6 @@ namespace LudumDare{
 		Tutorial* _tutorial;
 		Lose* _lose;
 		Win* _win;
-		GameMusic* _music;
 	public:
 		Game_Loop();
 		~Game_Loop();

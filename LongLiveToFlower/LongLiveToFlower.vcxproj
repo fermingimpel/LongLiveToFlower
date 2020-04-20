@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Music\music.h" />
     <ClInclude Include="..\src\Objects\common_things.h" />
     <ClInclude Include="..\src\Objects\flower.h" />
     <ClInclude Include="..\src\Objects\flower_needs.h" />
@@ -33,7 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Music\music.cpp" />
     <ClCompile Include="..\src\Objects\common_things.cpp" />
     <ClCompile Include="..\src\Objects\flower.cpp" />
     <ClCompile Include="..\src\Objects\flower_needs.cpp" />

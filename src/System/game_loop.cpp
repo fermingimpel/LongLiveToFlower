@@ -12,18 +12,15 @@ namespace LudumDare{
 		SetExitKey(KEY_VOLUME_DOWN);
 		InitAudioDevice();
 		loadSprites();
-
+		
 		gameState=onMenu;
 		_menu=NULL;
 		_game=NULL;
 		_tutorial=NULL;
 		_lose=NULL;
 		_win=NULL;
-		_music=NULL;
 
 		_menu=new Menu();
-		_music=new GameMusic();
-
 	}
 	Game_Loop::~Game_Loop(){
 		if(_menu!=NULL)
@@ -36,8 +33,6 @@ namespace LudumDare{
 			delete _lose;
 		if(_win!=NULL)
 			delete _win;
-		if(_music!=NULL)
-			delete _music;
 
 		unloadSprites();
 		CloseAudioDevice();
@@ -45,7 +40,6 @@ namespace LudumDare{
 	}
 	void Game_Loop::play(){
 		while(gameState!=closeGame&&!WindowShouldClose()){
-			_music->play();
 			BeginDrawing();
 			ClearBackground(BLACK);
 			switch(gameState){

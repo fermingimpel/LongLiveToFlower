@@ -11,6 +11,14 @@ namespace LudumDare{
 	Texture2D waterSprite;
 	Texture2D needWaterSprite;
 	Texture2D needSunSprite;
+	Sound waterSound;
+	Sound sunSound;
+	Sound needWaterSound;
+	Sound needSunSound;
+	Sound growSound;
+	Sound deadSound;
+	Sound winSound;
+	Sound loseSound;
 	//Menu
 	Texture2D menuSprite;
 	Texture2D playButtonSprite;
@@ -42,6 +50,15 @@ namespace LudumDare{
 		waterSprite=LoadTexture("res/assets/Sprites/WaterCan.png");;
 		needWaterSprite=LoadTexture("res/Assets/Sprites/NedWater.png");
 		needSunSprite=LoadTexture("res/Assets/Sprites/NeedSun.png");
+		waterSound=LoadSound("res/Assets/Sounds/Water.ogg");
+		sunSound=LoadSound("res/Assets/Sounds/Sun.ogg");
+		needWaterSound=LoadSound("res/Assets/Sounds/NeedWater.ogg");
+		needSunSound=LoadSound("res/Assets/Sounds/NeedSun.ogg");
+		growSound=LoadSound("res/Assets/Sounds/Grow.ogg");
+		deadSound=LoadSound("res/Assets/Sounds/Dead.ogg");
+		winSound=LoadSound("res/Assets/Sounds/Win.ogg");
+		loseSound=LoadSound("res/Assets/Sounds/Lose.ogg");
+
 
 		//Menu
 		menuSprite=LoadTexture("res/Assets/Sprites/MenuSprite.png");
@@ -79,6 +96,11 @@ namespace LudumDare{
 		UnloadTexture(waterSprite);
 		UnloadTexture(needWaterSprite);
 		UnloadTexture(needSunSprite);
+		UnloadSound(waterSound);
+		UnloadSound(sunSound);
+		UnloadSound(needWaterSound);
+		UnloadSound(needSunSound);
+		UnloadSound(growSound);
 
 		UnloadTexture(menuSprite);
 		UnloadTexture(playButtonSprite);

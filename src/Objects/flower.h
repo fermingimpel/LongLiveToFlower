@@ -11,6 +11,8 @@ namespace LudumDare{
 		float _chargeToGrow;
 		float _chargeToDie;
 		bool _death;
+		Sound _growSound;
+		Sound _deadSound;
 	public:
 		Flower();
 		~Flower();

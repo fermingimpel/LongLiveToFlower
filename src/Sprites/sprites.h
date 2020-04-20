@@ -14,7 +14,14 @@ namespace LudumDare{
 	extern Texture2D waterSprite;
 	extern Texture2D needWaterSprite;
 	extern Texture2D needSunSprite;
-
+	extern Sound waterSound;
+	extern Sound sunSound;
+	extern Sound needWaterSound;
+	extern Sound needSunSound;
+	extern Sound growSound;
+	extern Sound deadSound;
+	extern Sound winSound;
+	extern Sound loseSound;
 	//Menu
 	extern Texture2D menuSprite;
 	extern Texture2D playButtonSprite;
