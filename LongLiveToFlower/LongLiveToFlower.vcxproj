@@ -29,6 +29,7 @@
     <ClInclude Include="..\src\Scenes\win.h" />
     <ClInclude Include="..\src\Sprites\sprites.h" />
     <ClInclude Include="..\src\System\game_loop.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
@@ -42,6 +43,12 @@
     <ClCompile Include="..\src\Scenes\win.cpp" />
     <ClCompile Include="..\src\Sprites\sprites.cpp" />
     <ClCompile Include="..\src\System\game_loop.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\Assets\Sprites\Icon.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

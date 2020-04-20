@@ -45,6 +45,7 @@
     <ClInclude Include="..\src\Scenes\tutorial.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Objects\flower.cpp">
@@ -78,5 +79,11 @@
     <ClCompile Include="..\src\Scenes\tutorial.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\Assets\Sprites\Icon.ico" />
   </ItemGroup>
 </Project>

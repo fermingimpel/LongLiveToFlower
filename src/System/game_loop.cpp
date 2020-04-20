@@ -7,12 +7,18 @@
 
 namespace LudumDare{
 
+	static Image icon;
+
 	Game_Loop::Game_Loop(){
 		InitWindow(screenWidth,screenHeight,"Long Live To Flower LD46");
 		SetExitKey(KEY_VOLUME_DOWN);
 		InitAudioDevice();
 		loadSprites();
 		
+		icon = LoadImage("res/Assets/Sprites/Icon.png");
+		ImageFormat(&icon, UNCOMPRESSED_R8G8B8A8);
+		SetWindowIcon(icon);
+
 		gameState=onMenu;
 		_menu=NULL;
 		_game=NULL;

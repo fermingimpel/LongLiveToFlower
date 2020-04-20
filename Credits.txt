@@ -1,0 +1,4 @@
+All the game made by Fermin Gimpel - fermingimpel@gmail.com
+Game made in C++ with Raylib.
+This game was made for the Ludum Dare 46, theme "Keep it Alive"
+
